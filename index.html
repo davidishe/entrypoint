@@ -70,24 +70,35 @@
           </p>
         </div>
         <div class="hero__visual fade-in fade-in--delay" aria-hidden="true">
+          <div class="hero__glow hero__glow--one"></div>
+          <div class="hero__glow hero__glow--two"></div>
           <svg class="hero__svg" viewBox="0 0 480 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="heroLineGradient" x1="40" y1="30" x2="440" y2="330" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#A5B4FC"/>
+                <stop offset="50%" stop-color="#4F46E5"/>
+                <stop offset="100%" stop-color="#22D3EE"/>
+              </linearGradient>
+            </defs>
             <!-- Background nodes network -->
-            <circle cx="240" cy="180" r="44" fill="#EEF2FF" stroke="#4F46E5" stroke-width="2"/>
-            <circle cx="80" cy="80" r="28" fill="#F9F9F8" stroke="#E4E4E7" stroke-width="1.5"/>
-            <circle cx="400" cy="80" r="28" fill="#F9F9F8" stroke="#E4E4E7" stroke-width="1.5"/>
-            <circle cx="60" cy="280" r="22" fill="#F9F9F8" stroke="#E4E4E7" stroke-width="1.5"/>
-            <circle cx="420" cy="280" r="22" fill="#F9F9F8" stroke="#E4E4E7" stroke-width="1.5"/>
-            <circle cx="240" cy="60" r="20" fill="#EEF2FF" stroke="#4F46E5" stroke-width="1.5"/>
-            <circle cx="160" cy="290" r="18" fill="#F9F9F8" stroke="#E4E4E7" stroke-width="1.5"/>
-            <circle cx="320" cy="290" r="18" fill="#F9F9F8" stroke="#E4E4E7" stroke-width="1.5"/>
+            <circle class="node node--core" cx="240" cy="180" r="44" fill="#EEF2FF" stroke="#4F46E5" stroke-width="2"/>
+            <circle class="node node--outer node--1" cx="80" cy="80" r="28" fill="#F9F9F8" stroke="#E4E4E7" stroke-width="1.5"/>
+            <circle class="node node--outer node--2" cx="400" cy="80" r="28" fill="#F9F9F8" stroke="#E4E4E7" stroke-width="1.5"/>
+            <circle class="node node--outer node--3" cx="60" cy="280" r="22" fill="#F9F9F8" stroke="#E4E4E7" stroke-width="1.5"/>
+            <circle class="node node--outer node--4" cx="420" cy="280" r="22" fill="#F9F9F8" stroke="#E4E4E7" stroke-width="1.5"/>
+            <circle class="node node--outer node--5" cx="240" cy="60" r="20" fill="#EEF2FF" stroke="#4F46E5" stroke-width="1.5"/>
+            <circle class="node node--outer node--6" cx="160" cy="290" r="18" fill="#F9F9F8" stroke="#E4E4E7" stroke-width="1.5"/>
+            <circle class="node node--outer node--7" cx="320" cy="290" r="18" fill="#F9F9F8" stroke="#E4E4E7" stroke-width="1.5"/>
             <!-- Connection lines -->
-            <line x1="240" y1="136" x2="240" y2="80" stroke="#C7D2FE" stroke-width="1.5" stroke-dasharray="4 3"/>
-            <line x1="197" y1="157" x2="100" y2="98" stroke="#C7D2FE" stroke-width="1.5" stroke-dasharray="4 3"/>
-            <line x1="283" y1="157" x2="380" y2="98" stroke="#C7D2FE" stroke-width="1.5" stroke-dasharray="4 3"/>
-            <line x1="197" y1="203" x2="75" y2="267" stroke="#C7D2FE" stroke-width="1.5" stroke-dasharray="4 3"/>
-            <line x1="283" y1="203" x2="405" y2="267" stroke="#C7D2FE" stroke-width="1.5" stroke-dasharray="4 3"/>
-            <line x1="218" y1="220" x2="172" y2="273" stroke="#C7D2FE" stroke-width="1.5" stroke-dasharray="4 3"/>
-            <line x1="262" y1="220" x2="308" y2="273" stroke="#C7D2FE" stroke-width="1.5" stroke-dasharray="4 3"/>
+            <line class="hero__link" x1="240" y1="136" x2="240" y2="80" stroke="url(#heroLineGradient)" stroke-width="1.5" stroke-dasharray="4 3"/>
+            <line class="hero__link" x1="197" y1="157" x2="100" y2="98" stroke="url(#heroLineGradient)" stroke-width="1.5" stroke-dasharray="4 3"/>
+            <line class="hero__link" x1="283" y1="157" x2="380" y2="98" stroke="url(#heroLineGradient)" stroke-width="1.5" stroke-dasharray="4 3"/>
+            <line class="hero__link" x1="197" y1="203" x2="75" y2="267" stroke="url(#heroLineGradient)" stroke-width="1.5" stroke-dasharray="4 3"/>
+            <line class="hero__link" x1="283" y1="203" x2="405" y2="267" stroke="url(#heroLineGradient)" stroke-width="1.5" stroke-dasharray="4 3"/>
+            <line class="hero__link" x1="218" y1="220" x2="172" y2="273" stroke="url(#heroLineGradient)" stroke-width="1.5" stroke-dasharray="4 3"/>
+            <line class="hero__link" x1="262" y1="220" x2="308" y2="273" stroke="url(#heroLineGradient)" stroke-width="1.5" stroke-dasharray="4 3"/>
+            <circle class="data-ping" cx="240" cy="108" r="4" fill="#6366F1"/>
+            <circle class="data-ping data-ping--delay" cx="328" cy="244" r="4" fill="#22D3EE"/>
             <!-- Center icon -->
             <text x="240" y="186" font-family="Inter, sans-serif" font-size="22" font-weight="700" fill="#4F46E5" text-anchor="middle" dominant-baseline="middle">ИИ</text>
             <!-- Small icons in outer nodes -->

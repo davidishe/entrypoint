@@ -81,6 +81,23 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   100% { transform: scale(1); opacity: 0; }
 }
 .pulse-ring { animation: pulse-ring 2.4s ease-out infinite; transform-origin: 240px 180px; }
+@keyframes orbit-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+@keyframes dash-flow {
+  to { stroke-dashoffset: -28; }
+}
+@keyframes glow-shift {
+  0%, 100% { transform: scale(1) translate(0, 0); opacity: .5; }
+  50% { transform: scale(1.08) translate(8px, -6px); opacity: .8; }
+}
+@keyframes ping-travel {
+  0% { opacity: 0; transform: scale(.5); }
+  15% { opacity: 1; }
+  70% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: translate(0,-14px) scale(.7); }
+}
 
 /* ===== BUTTONS ===== */
 .btn {
@@ -267,11 +284,61 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  isolation: isolate;
 }
 .hero__svg {
   width: 100%;
   max-width: 480px;
   height: auto;
+  filter: drop-shadow(0 20px 45px rgba(79,70,229,.12));
+}
+.hero__glow {
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  filter: blur(12px);
+  animation: glow-shift 6s ease-in-out infinite;
+}
+.hero__glow--one {
+  width: 180px;
+  height: 180px;
+  left: 14%;
+  top: 14%;
+  background: radial-gradient(circle, rgba(79,70,229,.28) 0%, rgba(79,70,229,0) 75%);
+}
+.hero__glow--two {
+  width: 210px;
+  height: 210px;
+  right: 8%;
+  bottom: 8%;
+  background: radial-gradient(circle, rgba(34,211,238,.2) 0%, rgba(34,211,238,0) 72%);
+  animation-delay: 1.4s;
+}
+.hero__link {
+  opacity: .85;
+  animation: dash-flow 2.2s linear infinite;
+}
+.node--outer { animation: orbit-float 4.2s ease-in-out infinite; transform-origin: center; }
+.node--1 { animation-delay: .1s; }
+.node--2 { animation-delay: .35s; }
+.node--3 { animation-delay: .6s; }
+.node--4 { animation-delay: .8s; }
+.node--5 { animation-delay: 1s; }
+.node--6 { animation-delay: 1.2s; }
+.node--7 { animation-delay: 1.45s; }
+.data-ping {
+  transform-origin: center;
+  animation: ping-travel 2.4s ease-in-out infinite;
+}
+.data-ping--delay { animation-delay: 1.2s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__link,
+  .node--outer,
+  .data-ping,
+  .hero__glow,
+  .pulse-ring { animation: none !important; }
 }
 
 /* ===== PROBLEM ===== */
